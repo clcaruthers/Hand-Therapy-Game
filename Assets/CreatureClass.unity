@@ -1,0 +1,2672 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 8
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 11
+  m_GIWorkflowMode: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_TemporalCoherenceThreshold: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 1
+  m_LightmapEditorSettings:
+    serializedVersion: 9
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 0
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
+  m_LightingDataAsset: {fileID: 0}
+  m_UseShadowmask: 1
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &162728202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 162728207}
+  - component: {fileID: 162728206}
+  - component: {fileID: 162728205}
+  - component: {fileID: 162728204}
+  - component: {fileID: 162728203}
+  m_Layer: 0
+  m_Name: Creature
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &162728203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162728202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1676961385, guid: 6d6f80f5025cca449be06e240c6e9a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glyphGUID: 
+  _tabIndex: 1
+  _nodesExpanded: 1
+  serializedGraphs:
+  - name: Start
+    id: 498960929
+    hasError: 0
+    hasWarning: 0
+    isActive: 1
+    showItem: 1
+    showLabel: 0
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    labelRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    itemColor: {r: 0, g: 0, b: 0, a: 0}
+    scroll: {x: 0, y: 0}
+    zoom: 1
+    scrollSpeed: 1
+    isOpen: 0
+    eventNodeID: -931311542
+    serializedNodes:
+    - name: Start
+      id: -931311542
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 180
+        height: 72
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 180
+        height: 52
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: BaseEvents
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphEventStart, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: outPlug
+        id: -1202998501
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 164
+          y: 28
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 110
+          y: 28
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    serializedRegions: []
+  - name: OnCollisionEnter
+    id: -461009549
+    hasError: 0
+    hasWarning: 0
+    isActive: 1
+    showItem: 1
+    showLabel: 0
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    labelRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    itemColor: {r: 0, g: 0, b: 0, a: 0}
+    scroll: {x: -610, y: 269}
+    zoom: 0.85
+    scrollSpeed: 1.375
+    isOpen: 0
+    eventNodeID: 139645620
+    serializedNodes:
+    - name: OnCollisionEnter
+      id: 139645620
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 180
+        height: 84
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 170
+        height: 64
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: Physics
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphEventOnCollisionEnter, Diagram,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: collision
+        id: -1499014091
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 149
+          y: 58
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 93
+          y: 58
+          width: 50
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: collisionPlug
+        dataTypeQuilifiedName: UnityEngine.Collision, UnityEngine.PhysicsModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: -2062753878
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 164
+          y: 34
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 110
+          y: 34
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: aeef6b32
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: playerSpellElement
+      id: -937376695
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: -50
+        y: 175
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 0, g: 1, b: 1, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: 810564413
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: VirtualHammer.GlyphHammer.spellElements, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 01597353
+      - name: variableSocket
+        id: -1107068472
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: VirtualHammer.GlyphHammer.spellElements, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: -993558088
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: 637558807
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: 1818122938
+      isPublic: 0
+    - name: Equal To
+      id: 1752229511
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 305
+        width: 136
+        height: 66
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 136
+        height: 20
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: Operator
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphOperatorEqualTo, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: A
+        id: 1400068353
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 18
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 18
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: A
+        dataTypeQuilifiedName: System.Object, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 3d3b5030
+      - name: B
+        id: -483303015
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 40
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 40
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: B
+        dataTypeQuilifiedName: VirtualHammer.GlyphHammer.spellElements, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: resultPlug
+        id: -215298979
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 113
+          y: 40
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 44
+          y: 40
+          width: 63
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: resultPlug
+        dataTypeQuilifiedName: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: creatureHitPoints
+      id: -1265926840
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: -76
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 0.6, g: 1, b: 0, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: 343565083
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 83bcaaae
+      - name: variableSocket
+        id: -1130293725
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: -1013054230
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: -1538173486
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: 703224151
+      isPublic: 0
+    - name: playerSpellDamage
+      id: 334992427
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 3
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 0.6, g: 1, b: 0, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: 1209028138
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 26ccfa3a
+      - name: variableSocket
+        id: 884697594
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: 772978908
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: 1860793085
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: -1289792805
+      isPublic: 0
+    - name: Subtract (Float)
+      id: 924369530
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: -8
+        width: 173
+        height: 66
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 173
+        height: 20
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: Operator
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphOperatorMinusFloat, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields:
+      - fieldName: valueA
+        fieldType: 3
+        intValue: 0
+        boolValue: 0
+        floatValue: 0
+        stringValue: 
+        colorValue: {r: 0, g: 0, b: 0, a: 0}
+        layerMaskValue:
+          serializedVersion: 2
+          m_Bits: 0
+        enumValue:
+          qualifiedName: 
+          value: 0
+        vector2Value: {x: 0, y: 0}
+        vector3Value: {x: 0, y: 0, z: 0}
+        vector4Value: {x: 0, y: 0, z: 0, w: 0}
+        quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+        rectValue:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        animationCurveValue:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        boundsValue:
+          m_Center: {x: 0, y: 0, z: 0}
+          m_Extent: {x: 0, y: 0, z: 0}
+      - fieldName: valueB
+        fieldType: 3
+        intValue: 0
+        boolValue: 0
+        floatValue: 0
+        stringValue: 
+        colorValue: {r: 0, g: 0, b: 0, a: 0}
+        layerMaskValue:
+          serializedVersion: 2
+          m_Bits: 0
+        enumValue:
+          qualifiedName: 
+          value: 0
+        vector2Value: {x: 0, y: 0}
+        vector3Value: {x: 0, y: 0, z: 0}
+        vector4Value: {x: 0, y: 0, z: 0, w: 0}
+        quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+        rectValue:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        animationCurveValue:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        boundsValue:
+          m_Center: {x: 0, y: 0, z: 0}
+          m_Extent: {x: 0, y: 0, z: 0}
+      connectors:
+      - name: A
+        id: -1364542333
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 18
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 18
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: A
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: valueA
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 1b637a14
+      - name: B
+        id: 989514790
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 40
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 40
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: B
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: valueB
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 2a4e1048
+      - name: resultPlug
+        id: -61753814
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 150
+          y: 40
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 81
+          y: 40
+          width: 63
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: resultPlug
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 267ed815
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: If
+      id: -1584097305
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 90
+        width: 170
+        height: 170
+      labelRect:
+        serializedVersion: 2
+        x: 24
+        y: 20
+        width: 80
+        height: 130
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: Execution Flow
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphIfStatement, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: inSocket
+        id: 845934510
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 18
+          y: 76
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 40
+          y: 76
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: aadf0c85
+      - name: T
+        id: 211168852
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 126
+          y: 58
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 111
+          y: 58
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outTrue
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 019a7471
+      - name: F
+        id: 1978125954
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 126
+          y: 95
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 111
+          y: 95
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outFalse
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: T/F
+        id: 1703811626
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 10
+          y: 137
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 32
+          y: 137
+          width: 22
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: condition
+        dataTypeQuilifiedName: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: creatureHitPoints
+      id: -2038098422
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 91
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 0.6, g: 1, b: 0, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: -1365398100
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: variableSocket
+        id: 366509606
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 2ab651fc
+      - name: outPlug
+        id: 1884431789
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 1b97e17e
+      - name: inSocket
+        id: 1903467009
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 542e960c
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: 703224151
+      isPublic: 0
+    - name: If
+      id: 1007671186
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 2174.0105
+        y: 67.82347
+        width: 170
+        height: 170
+      labelRect:
+        serializedVersion: 2
+        x: 24
+        y: 20
+        width: 80
+        height: 130
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: Execution Flow
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphIfStatement, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: inSocket
+        id: 2128713499
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 18
+          y: 76
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 40
+          y: 76
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: ad255270
+      - name: T
+        id: -243118338
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 126
+          y: 58
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 111
+          y: 58
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outTrue
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 0abdac9f
+      - name: F
+        id: -1698500998
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 126
+          y: 95
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 111
+          y: 95
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outFalse
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: T/F
+        id: 2106708266
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 10
+          y: 137
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 32
+          y: 137
+          width: 22
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: condition
+        dataTypeQuilifiedName: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 0909f063
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: Equal To
+      id: 418264847
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 1987.0332
+        y: 333.81766
+        width: 136
+        height: 66
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 136
+        height: 20
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: Operator
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphOperatorEqualTo, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: A
+        id: -48697556
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 18
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 18
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: A
+        dataTypeQuilifiedName: System.Object, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: c9b437a9
+      - name: B
+        id: -288801815
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 40
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 40
+          width: 9
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: B
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: d3ef8b9f
+      - name: resultPlug
+        id: 1676675337
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 113
+          y: 40
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 44
+          y: 40
+          width: 63
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: resultPlug
+        dataTypeQuilifiedName: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 2ad1917d
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: Destroy
+      id: -660894397
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 2558.9968
+        y: 115.82324
+        width: 158
+        height: 106
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 158
+        height: 20
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: UnityObject
+      funcSignature: Destroy (obj, t)
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphUnityObjectDestroy, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields:
+      - fieldName: local_t
+        fieldType: 3
+        intValue: 0
+        boolValue: 0
+        floatValue: 3
+        stringValue: 
+        colorValue: {r: 0, g: 0, b: 0, a: 0}
+        layerMaskValue:
+          serializedVersion: 2
+          m_Bits: 0
+        enumValue:
+          qualifiedName: 
+          value: 0
+        vector2Value: {x: 0, y: 0}
+        vector3Value: {x: 0, y: 0, z: 0}
+        vector4Value: {x: 0, y: 0, z: 0, w: 0}
+        quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+        rectValue:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        animationCurveValue:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        boundsValue:
+          m_Center: {x: 0, y: 0, z: 0}
+          m_Extent: {x: 0, y: 0, z: 0}
+      connectors:
+      - name: obj
+        id: 550725364
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 58
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 58
+          width: 19
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: objSocket
+        dataTypeQuilifiedName: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        localDataFieldName: 
+        requiresConnection: 1
+        isArray: 0
+        switchID: 0
+        connectionIDs: 890c7636
+      - name: t
+        id: 1179516219
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 1
+        rect:
+          serializedVersion: 2
+          x: 7
+          y: 80
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 29
+          y: 80
+          width: 4
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: tSocket
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: local_t
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: 819257184
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 142
+          y: 30
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 88
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: -1616069366
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 0
+          y: 30
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: fe4e82f1
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    - name: selfObject
+      id: 1010014873
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 2290.0022
+        y: 231.82236
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 1, g: 0.5, b: 0, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: 913706121
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: f466d320
+      - name: variableSocket
+        id: 222390819
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: -476914041
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: 137479234
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: -1893646457
+      isPublic: 0
+    - name: creatureDeathThreshold
+      id: 1938104315
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 362
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 0.6, g: 1, b: 0, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: -1618219053
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: e93bc9ee
+      - name: variableSocket
+        id: 85310543
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: -908488270
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: 394804266
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: -758297772
+      isPublic: 0
+    - name: creatureHitPoints
+      id: -430539858
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 277
+        width: 210
+        height: 105
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 270
+        height: 20
+      itemColor: {r: 0.6, g: 1, b: 0, a: 1}
+      category: GlyphNode
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphVariableContainer, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: variablePlug
+        id: -1455967031
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 176
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 92
+          y: 70
+          width: 78
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 4
+        connectorFieldName: variablePlug
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: GetData
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 2cef18fd
+      - name: variableSocket
+        id: -36814132
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 3
+          y: 70
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 25
+          y: 70
+          width: 93
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 3
+        connectorFieldName: variableSocket
+        dataTypeQuilifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: outPlug
+        id: 1645923344
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 190
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 200
+          y: 30
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      - name: inSocket
+        id: 367158293
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 15
+          y: 32
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 22
+          y: 30
+          width: 54
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 1
+        connectorFieldName: inSocket
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 162728203}
+      vfID: 703224151
+      isPublic: 0
+    serializedRegions: []
+  - name: OnDestroy
+    id: -783709359
+    hasError: 0
+    hasWarning: 0
+    isActive: 1
+    showItem: 1
+    showLabel: 0
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    labelRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    itemColor: {r: 0, g: 0, b: 0, a: 0}
+    scroll: {x: 0, y: 0}
+    zoom: 1
+    scrollSpeed: 1
+    isOpen: 0
+    eventNodeID: 1980084153
+    serializedNodes:
+    - name: OnDestroy
+      id: 1980084153
+      hasError: 0
+      hasWarning: 0
+      isActive: 0
+      showItem: 1
+      showLabel: 1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 180
+        height: 72
+      labelRect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 180
+        height: 52
+      itemColor: {r: 1, g: 1, b: 1, a: 1}
+      category: BaseEvents
+      funcSignature: 
+      qualifiedName: VirtualHammer.GlyphHammer.GlyphEventOnDestroy, Diagram, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      inputFields: []
+      connectors:
+      - name: outPlug
+        id: -1324216450
+        hasError: 0
+        hasWarning: 0
+        isActive: 0
+        showItem: 1
+        showLabel: 0
+        rect:
+          serializedVersion: 2
+          x: 164
+          y: 28
+          width: 16
+          height: 16
+        labelRect:
+          serializedVersion: 2
+          x: 110
+          y: 28
+          width: 48
+          height: 16
+        itemColor: {r: 1, g: 1, b: 1, a: 1}
+        connectorType: 2
+        connectorFieldName: outPlug
+        dataTypeQuilifiedName: 
+        localDataFieldName: 
+        requiresConnection: 0
+        isArray: 0
+        switchID: 0
+        connectionIDs: 
+      showComment: 0
+      comment: 
+      otherBehaviour: {fileID: 0}
+      vfID: 0
+      isPublic: 0
+    serializedRegions: []
+  _varsExpanded: 1
+  boolVariables: []
+  intVariables: []
+  floatVariables:
+  - color: {r: 0.6, g: 1, b: 0, a: 1}
+    _id: 703224151
+    _name: creatureHitPoints
+    assemblyQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - 5
+  - color: {r: 0.6, g: 1, b: 0, a: 1}
+    _id: 1408461409
+    _name: creatureLevel
+    assemblyQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - 1
+  - color: {r: 0.6, g: 1, b: 0, a: 1}
+    _id: 731086522
+    _name: creatureAttackDmg
+    assemblyQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - 1
+  - color: {r: 0.6, g: 1, b: 0, a: 1}
+    _id: -1289792805
+    _name: playerSpellDamage
+    assemblyQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - 0
+  - color: {r: 0.6, g: 1, b: 0, a: 1}
+    _id: -758297772
+    _name: creatureDeathThreshold
+    assemblyQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - 0
+  stringVariables: []
+  enumVariables:
+  - color: {r: 0, g: 1, b: 1, a: 1}
+    _id: -854891163
+    _name: creatureElement
+    assemblyQualifiedName: VirtualHammer.GlyphHammer.spellElements, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    intValues: 00000000
+  - color: {r: 0, g: 1, b: 1, a: 1}
+    _id: 1818122938
+    _name: playerSpellElement
+    assemblyQualifiedName: VirtualHammer.GlyphHammer.spellElements, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    intValues: 00000000
+  animatorClipInfoVariables: []
+  colorVariables: []
+  rayVariables: []
+  ray2DVariables: []
+  raycastHitVariables: []
+  raycastHit2DVariables: []
+  rectVariables: []
+  vector2Variables: []
+  vector3Variables: []
+  quaternionVariables: []
+  planeVariables: []
+  boundsVariables: []
+  gameObjectVariables:
+  - color: {r: 1, g: 0.5, b: 0, a: 1}
+    _id: -1893646457
+    _name: selfObject
+    assemblyQualifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - {fileID: 162728202}
+  monoBehaviourVariables: []
+  transformVariables: []
+  rigidbodyVariables: []
+  colliderVariables: []
+  cameraVariables: []
+  animatorVariables: []
+  componentVariables: []
+  scriptableObjectVariables: []
+  unityEngineObjectVariables:
+  - color: {r: 0, g: 0.7, b: 1, a: 1}
+    _id: -325120309
+    _name: creatureMesh
+    assemblyQualifiedName: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - {fileID: 0}
+  - color: {r: 0, g: 0.7, b: 1, a: 1}
+    _id: -2141035665
+    _name: creatureMaterial
+    assemblyQualifiedName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    isArray: 0
+    isPublic: 1
+    isExpanded: 1
+    values:
+    - {fileID: 0}
+--- !u!23 &162728204
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162728202}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &162728205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162728202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &162728206
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162728202}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &162728207
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162728202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.1115723, y: 2.1467886, z: 6.2598825}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1326288137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1326288139}
+  - component: {fileID: 1326288138}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1326288138
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326288137}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1326288139
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326288137}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1406092931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1406092935}
+  - component: {fileID: 1406092934}
+  - component: {fileID: 1406092933}
+  - component: {fileID: 1406092932}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1406092932
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406092931}
+  m_Enabled: 1
+--- !u!124 &1406092933
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406092931}
+  m_Enabled: 1
+--- !u!20 &1406092934
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406092931}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1406092935
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406092931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
