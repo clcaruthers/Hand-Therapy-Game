@@ -15,10 +15,15 @@ public class MotionDetection : MonoBehaviour {
     private int[] fingerPinchCount;
     private bool pinched = false;
     private bool testBool = false;
+    private bool clenched;
     #endregion
 
     #region Publics 
     public float minDisPinch = 19.0f;
+
+    public bool[] fingersPinched = new bool[4];
+    public bool handRaised;
+    public int clenchCount = 0;
 
     #endregion
 
@@ -121,10 +126,11 @@ public class MotionDetection : MonoBehaviour {
             }
         }
 
+        handRaised = result;
         return result;
     }
 
-    bool isFingerPinching(Hand hand, int index)
+    public bool isFingerPinching(Hand hand, int index)
     {
         bool result = false;
         Vector3 posFing1 = hand.Fingers[index].TipPosition.ToVector3();
@@ -138,7 +144,22 @@ public class MotionDetection : MonoBehaviour {
             result = true;
         }
 
+        fingersPinched[index - 1] = result;
         return result;
+    }
+
+    public void ClenchFist()
+    {
+        clenched = true;
+    }
+
+    public void UnClenchFist()
+    {
+        if (clenched)
+        {
+            clenched = false;
+            clenchCount++;
+        }
     }
 
     public void CastFireball()
