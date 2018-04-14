@@ -143,6 +143,6 @@ namespace Leap.Unity {
       LeapTransform transform = new LeapTransform(t.position.ToVector(), t.rotation.ToLeapQuaternion(), scale);
       transform.MirrorZ(); // Unity is left handed.
       return transform;
-    }
+    }   
   }
 }
