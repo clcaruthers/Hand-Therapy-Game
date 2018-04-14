@@ -1033,6 +1033,8 @@ GameObject:
   - component: {fileID: 1078268926}
   - component: {fileID: 1078268925}
   - component: {fileID: 1078268927}
+  - component: {fileID: 1078268928}
+  - component: {fileID: 1078268929}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1052,6 +1054,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDisPinch: 19
+  fingersPinched: 00000000
+  handRaised: 0
+  clenchCount: 0
 --- !u!4 &1078268926
 Transform:
   m_ObjectHideFlags: 0
@@ -1079,12 +1084,12 @@ MonoBehaviour:
   OnActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1078268924}
-        m_MethodName: 
+      - m_Target: {fileID: 1078268925}
+        m_MethodName: UnClenchFist
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1106,6 +1111,61 @@ MonoBehaviour:
   Pinky: 0
   MinimumExtendedCount: 5
   MaximumExtendedCount: 5
+  ShowGizmos: 1
+--- !u!114 &1078268928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078268924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f69485f8c01164449c427b8f28bc047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinchLength: 10
+  necessaryPinches: 5
+--- !u!114 &1078268929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078268924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1078268925}
+        m_MethodName: ClenchFist
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Period: 0.1
+  HandModel: {fileID: 1944805179}
+  Thumb: 1
+  Index: 1
+  Middle: 1
+  Ring: 1
+  Pinky: 1
+  MinimumExtendedCount: 0
+  MaximumExtendedCount: 0
   ShowGizmos: 1
 --- !u!1 &1325830794
 GameObject:
