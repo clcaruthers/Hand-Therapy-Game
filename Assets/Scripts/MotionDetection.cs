@@ -124,7 +124,7 @@ public class MotionDetection : MonoBehaviour {
         return result;
     }
 
-    bool isFingerPinching(Hand hand, int index)
+    public bool isFingerPinching(Hand hand, int index)
     {
         bool result = false;
         Vector3 posFing1 = hand.Fingers[index].TipPosition.ToVector3();
