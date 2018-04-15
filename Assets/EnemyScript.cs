@@ -16,7 +16,24 @@ public class EnemyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        MeshRenderer MR = GetComponent<MeshRenderer>();
+        switch (element)
+        {
+            case Element.fire:
+                MR.material.color = Color.red;
+                break;
+            case Element.water:
+                MR.material.color = Color.blue;
+                break;
+            case Element.earth:
+                MR.material.color = Color.black;
+                break;
+            case Element.air:
+                MR.material.color = Color.yellow;
+                break;
+            default:
+                break;
+        }
 	}
 
     void TakeDamage(int _element, int _damage)
@@ -52,7 +69,11 @@ public class EnemyScript : MonoBehaviour {
         }
 
         if (health < 0)
-            health = 0;
+        {
+            int h = ((int)(Random.value * 100) % 5 + 5) * 10;
+            int t = (int)(Random.value * 100) % 4;
+            reset(t, h);
+        }
 
     }
 
