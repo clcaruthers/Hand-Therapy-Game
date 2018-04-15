@@ -8,6 +8,7 @@ public class MotionDetection : MonoBehaviour {
 
     #region Privates
     enum FingerIndex { index = 1, middle, ring, pinky};
+    public GameObject clenchParticle;
 
     Controller controller;
     private Hand handReference;
@@ -173,7 +174,14 @@ public class MotionDetection : MonoBehaviour {
 
     public void ClenchFist()
     {
+        if (!clenched)
+        {
+            clenchParticle.transform.position = GameObject.FindGameObjectWithTag("Hand").transform.position;
+
+            clenchParticle.GetComponent<ParticleSystem>().Play();
+        }
         clenched = true;
+
     }
 
     public void UnClenchFist()

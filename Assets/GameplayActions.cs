@@ -21,6 +21,9 @@ public class GameplayActions : MonoBehaviour {
     private ParticleSystem selectedPS = null;
     private ParticleSystem restorePS = null;
 
+    GameObject fireIcon, waterIcon, earthIcon, lightIcon;
+
+
     EnemyScript eScript;
 
     int[] pinchCounts = new int[4];
@@ -39,9 +42,20 @@ public class GameplayActions : MonoBehaviour {
 
     ProjectileType type;
 
+    void Awake()
+    {
+        fireIcon = GameObject.Find("FireIcon");
+        waterIcon = GameObject.Find("WaterIcon");
+        earthIcon = GameObject.Find("EarthIcon");
+        lightIcon = GameObject.Find("LightIcon");
+
+        ResetIcons();
+
+    }
 
     // Use this for initialization
     void Start () {
+
         type = new ProjectileType();
         mDetection = GetComponent<MotionDetection>();
         for(int i = 0; i < 4; ++i)
@@ -50,6 +64,7 @@ public class GameplayActions : MonoBehaviour {
         }
 
         eScript = enemy.GetComponent<EnemyScript>();
+
 	}
 	
 	// Update is called once per frame
@@ -117,35 +132,48 @@ public class GameplayActions : MonoBehaviour {
         type.element = element;
         selected = true;
 
-        //maybe play a sound on selection
+        ResetIcons();
 
-
-        //maybe increase the particle system rate on selection
-        //if (selectedPS != null)
-        //{
-        //    selectedPS = restorePS;
-        //}
-        //
-        //restorePS = fingerParticles[element];
-        //selectedPS = fingerParticles[element];
-        //
-        //for (int i = 0; i < fingerParticles.Length; i++)
-        //{
-        //    if (!mDetection.getHand().IsLeft)
-        //        i += 4;
-        //    if (i != element)
-        //        fingerParticles[i].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        //    else
-        //        fingerParticles[i].Play();
-        //}
-
+        if (element == 0) //fire
+        {
+            Color f = fireIcon.GetComponent<UnityEngine.UI.Image>().color;
+            fireIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 255.0f);
+        }
         
+        else if (element == 1) //water
+        {
+            Color f = waterIcon.GetComponent<UnityEngine.UI.Image>().color;
+            waterIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 255.0f);
+        }
 
+        else if (element == 2) //earth
+        {
+            Color f = earthIcon.GetComponent<UnityEngine.UI.Image>().color;
+            earthIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 255.0f);
+        }
 
+        else if (element == 3) //lightning
+        {
+            Color f = lightIcon.GetComponent<UnityEngine.UI.Image>().color;
+            lightIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 255.0f);
+        }
 
-
+        //maybe play a sound on selection
 
     }
 
+    void ResetIcons()
+    {
+        Color f, w, e, l;
+        f = fireIcon.GetComponent<UnityEngine.UI.Image>().color;
+        w = waterIcon.GetComponent<UnityEngine.UI.Image>().color;
+        e = earthIcon.GetComponent<UnityEngine.UI.Image>().color;
+        l = lightIcon.GetComponent<UnityEngine.UI.Image>().color;
+
+        fireIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b,  0.0f);
+        waterIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(w.r, w.g, w.b, 0.0f);
+        earthIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(e.r, e.g, e.b, 0.0f);
+        lightIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(l.r, l.g, l.b, 0.0f);
+    }
 
 }
