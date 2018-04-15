@@ -19,6 +19,8 @@ public class MotionDetection : MonoBehaviour {
     private bool testBool = false;
     private bool clenched;
     private bool shooting = false;
+
+    
     #endregion
 
     #region Publics 
@@ -28,6 +30,8 @@ public class MotionDetection : MonoBehaviour {
     public bool[] fingersPinched = new bool[4];
     public bool handRaised = false;
     public int clenchCount = 0;
+
+    AudioSource AS;
 
     [RequireComponent(typeof(Rigidbody))]
     [System.Serializable]
@@ -54,6 +58,8 @@ public class MotionDetection : MonoBehaviour {
 
         if (controller.IsConnected)
             Debug.Log("Connected");
+
+        AS = this.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -179,6 +185,8 @@ public class MotionDetection : MonoBehaviour {
             clenchParticle.transform.position = GameObject.FindGameObjectWithTag("Hand").transform.position;
 
             clenchParticle.GetComponent<ParticleSystem>().Play();
+
+            AS.Play();
         }
         clenched = true;
 
