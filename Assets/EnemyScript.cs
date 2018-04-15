@@ -11,6 +11,9 @@ public class EnemyScript : MonoBehaviour {
     public int maxHealth = 50;
     public Element element = Element.water;
 
+    public GameObject animator;
+    Animator anim;
+
     public GameObject HealthBar;
 
     public GameObject[] effects = new GameObject[4];
@@ -20,24 +23,25 @@ public class EnemyScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         HealthBar = this.transform.Find("Canvas").gameObject;
+        anim = animator.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        MeshRenderer MR = GetComponent<MeshRenderer>();
+        Material MR = GetComponent<MeshRenderer>().materials[1];
         switch (element)
         {
             case Element.fire:
-                MR.material.color = Color.red;
+                MR.color = Color.red;
                 break;
             case Element.water:
-                MR.material.color = Color.blue;
+                MR.color = Color.blue;
                 break;
             case Element.earth:
-                MR.material.color = Color.black;
+                MR.color = Color.green;
                 break;
             case Element.air:
-                MR.material.color = Color.yellow;
+                MR.color = Color.yellow;
                 break;
             default:
                 break;
@@ -101,6 +105,7 @@ public class EnemyScript : MonoBehaviour {
         {
             int h = ((int)(Random.value * 100) % 5 + 5) * 10;
             int t = (int)(Random.value * 100) % 4;
+            anim.SetTrigger("Dead");
             reset(t, h);
         }
 
