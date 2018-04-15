@@ -101,7 +101,7 @@ public class EnemyScript : MonoBehaviour {
                 break;
         }
 
-        if (health < 0)
+        if (health <= 0)
         {
             int h = ((int)(Random.value * 100) % 5 + 5) * 10;
             int t = (int)(Random.value * 100) % 4;
