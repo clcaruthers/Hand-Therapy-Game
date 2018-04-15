@@ -20,6 +20,8 @@ public class EnemyScript : MonoBehaviour {
 
     GameplayActions.ProjectileType type;
 
+    float resetTimer = 0;
+
 	// Use this for initialization
 	void Start () {
         HealthBar = this.transform.Find("Canvas").gameObject;
@@ -47,6 +49,16 @@ public class EnemyScript : MonoBehaviour {
                 break;
         }
 
+        if (resetTimer > 0)
+        {
+            resetTimer -= Time.deltaTime;
+            if (resetTimer <= 0)
+            {
+                int h = ((int)(Random.value * 100) % 5 + 5) * 10;
+                int t = (int)(Random.value * 100) % 4;
+                reset(t, h);
+            }
+        }
         HealthBar.transform.Find("HP").gameObject.GetComponent<Text>().text = "HP: " + health + " / " + maxHealth;
 
 	}
@@ -101,12 +113,10 @@ public class EnemyScript : MonoBehaviour {
                 break;
         }
 
-        if (health < 0)
+        if (health <= 0)
         {
-            int h = ((int)(Random.value * 100) % 5 + 5) * 10;
-            int t = (int)(Random.value * 100) % 4;
             anim.SetTrigger("Dead");
-            reset(t, h);
+            resetTimer = 2;
         }
 
     }
