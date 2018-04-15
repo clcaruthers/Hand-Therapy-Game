@@ -14,6 +14,7 @@ public class ProjectileScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        AS = this.GetComponent<AudioSource>();
         script = GameObject.Find("GameObject").GetComponent<GameplayActions>();
         if (script != null)
             Setup();
@@ -37,7 +38,11 @@ public class ProjectileScript : MonoBehaviour {
         }
 
         if (collision.gameObject.tag == "Enemy")
-            Destroy(this.gameObject);
+        {
+            AS.PlayOneShot(AS.clip);
+            this.GetComponent<MeshRenderer>().enabled = false;
+            Destroy(this.gameObject, AS.clip.length);
+        }
 
     }
 

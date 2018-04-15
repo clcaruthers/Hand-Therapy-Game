@@ -59,6 +59,8 @@ public class EnemyScript : MonoBehaviour {
                 reset(t, h);
             }
         }
+        if (health < 0)
+            health = 0;
         HealthBar.transform.Find("HP").gameObject.GetComponent<Text>().text = "HP: " + health + " / " + maxHealth;
 
 	}
