@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour {
 
     public enum Element { fire, water, earth, air };
 
     public int health = 50;
+    public int maxHealth = 50;
     public Element element = Element.water;
+
+    public GameObject HealthBar;
 
     public GameObject[] effects = new GameObject[4];
 
@@ -38,6 +42,16 @@ public class EnemyScript : MonoBehaviour {
             default:
                 break;
         }
+
+        GameObject currHealth = GameObject.Find("CurrentHealth");
+
+        Image image = currHealth.GetComponent<Image>();
+
+        float testFill = health / (float)maxHealth;
+
+        image.fillAmount = testFill;
+
+
 	}
 
     public void TakeDamage(int _element, int _damage)
@@ -102,6 +116,7 @@ public class EnemyScript : MonoBehaviour {
     public void reset(int newType, int _health)
     {
         health = _health;
+        maxHealth = _health;
         element = (Element)newType;
     }
 }
