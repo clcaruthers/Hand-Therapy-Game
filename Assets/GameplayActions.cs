@@ -28,6 +28,8 @@ public class GameplayActions : MonoBehaviour {
     bool[] pinchable = new bool[4];
     bool shot = false;
 
+    public bool selected = false;
+
     public float timePinching = 0.2f;
 
     private float[] timeCount = { 0.2f, 0.2f, 0.2f, 0.2f };
@@ -98,7 +100,8 @@ public class GameplayActions : MonoBehaviour {
 
     public ProjectileType assignBall()
     {
-        type.power = mDetection.clenchCount;
+        type.power = mDetection.clenchCount + 1;
+        selected = false;
         shot = true;
         return type;
     }
@@ -112,6 +115,7 @@ public class GameplayActions : MonoBehaviour {
         }
 
         type.element = element;
+        selected = true;
 
         //maybe play a sound on selection
 

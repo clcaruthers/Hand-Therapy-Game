@@ -8,6 +8,8 @@ public class ProjectileScript : MonoBehaviour {
 
     private GameplayActions.ProjectileType myType;
 
+    private int element;
+
 	// Use this for initialization
 	void Start () {
         script = GameObject.Find("GameObject").GetComponent<GameplayActions>();
@@ -26,7 +28,7 @@ public class ProjectileScript : MonoBehaviour {
         EnemyScript eScript = collision.gameObject.GetComponent<EnemyScript>();
         if (eScript != null)
         {
-            eScript.TakeDamage(myType.element, myType.power);
+            eScript.TakeDamage(element, myType.power);
         }
         Destroy(this.gameObject);
 
@@ -35,11 +37,12 @@ public class ProjectileScript : MonoBehaviour {
     public void Setup()
     {
         myType = script.assignBall();
+        element = myType.element;
         if (myType.element == -1)
         {
-            //Destroy(this.gameObject
-            this.transform.localScale = this.transform.localScale * 0.1f;
-            myType.element = 1;
+            Destroy(this.gameObject);
+            //this.transform.localScale = this.transform.localScale * 0.1f;
+            //myType.element = 1;
 
         }
         if (myType.element == 0)
