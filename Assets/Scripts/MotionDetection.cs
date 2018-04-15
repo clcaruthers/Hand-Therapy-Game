@@ -16,14 +16,25 @@ public class MotionDetection : MonoBehaviour {
     private bool pinched = false;
     private bool testBool = false;
     private bool clenched;
+    private bool shooting = false;
     #endregion
 
     #region Publics 
     public float minDisPinch = 19.0f;
 
     public bool[] fingersPinched = new bool[4];
-    public bool handRaised;
+    public bool handRaised = false;
     public int clenchCount = 0;
+
+    [RequireComponent(typeof(Rigidbody))]
+    [System.Serializable]
+    public class Projectile
+    {
+        public GameObject body;
+    }
+
+    public Projectile[] projectiles;
+    public GameObject palm;
 
     #endregion
 
@@ -83,7 +94,17 @@ public class MotionDetection : MonoBehaviour {
 
     void Behavior(Hand hand)
     {
-        isIronManHands(hand);
+        if (isIronManHands(hand))
+        {
+            if (!handRaised)
+            {
+                Shoot(hand, 0);
+                handRaised = true;
+            }
+
+        }
+        else
+            handRaised = false;
 
         if (pinchCount >= 5)
         {
@@ -126,7 +147,6 @@ public class MotionDetection : MonoBehaviour {
             }
         }
 
-        handRaised = result;
         return result;
     }
 
@@ -165,5 +185,24 @@ public class MotionDetection : MonoBehaviour {
     public void CastFireball()
     {
         Debug.Log("Fireball");
+    }
+
+    public void Shoot(Hand hand, int type)
+    {
+        if (!shooting)
+        {
+            if (type == 0)
+            {
+                GameObject proj = GameObject.Instantiate(projectiles[0].body);
+
+                proj.transform.position = hand.PalmPosition.ToVector3() / 1000.0f;
+                proj.transform.position = new Vector3(proj.transform.position.x, proj.transform.position.y - 0.3f, proj.transform.position.z + 0.5f);
+
+                proj.GetComponent<Rigidbody>().velocity = Vector3.forward;
+
+            }
+
+        }
+
     }
 }
