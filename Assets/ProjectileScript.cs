@@ -6,7 +6,11 @@ public class ProjectileScript : MonoBehaviour {
 
     GameplayActions script = null;
 
-    private GameplayActions.ProjectileType myType;
+    public GameplayActions.ProjectileType myType;
+
+    AudioSource AS;
+
+    private int element;
 
 	// Use this for initialization
 	void Start () {
@@ -21,15 +25,26 @@ public class ProjectileScript : MonoBehaviour {
         Destroy(this.gameObject, 5.0f);
 	}
 
-    
+    void OnCollisionEnter(Collision collision)
+    {
+        EnemyScript eScript = collision.gameObject.GetComponent<EnemyScript>();
+        if (eScript != null)
+        {
+            eScript.TakeDamage(element, myType.power);
+        }
+        Destroy(this.gameObject);
+
+    }
 
     public void Setup()
     {
         myType = script.assignBall();
+        element = myType.element;
         if (myType.element == -1)
         {
-            //Destroy(this.gameObject
-            this.transform.localScale = this.transform.localScale * 0.1f;
+            Destroy(this.gameObject);
+            //this.transform.localScale = this.transform.localScale * 0.1f;
+            //myType.element = 1;
 
         }
         if (myType.element == 0)
@@ -40,5 +55,6 @@ public class ProjectileScript : MonoBehaviour {
             this.GetComponent<MeshRenderer>().material.color = Color.blue;
         if (myType.element == 3)
             this.GetComponent<MeshRenderer>().material.color = Color.yellow;
+
     }
 }

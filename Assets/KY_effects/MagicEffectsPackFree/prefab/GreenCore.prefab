@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
+  - component: {fileID: 114001625045723388}
   m_Layer: 0
   m_Name: GreenCore
   m_TagString: Untagged
@@ -4022,7 +4023,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -4063,7 +4064,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -17317,3 +17318,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100006}
   m_IsPrefabParent: 1
+--- !u!114 &114001625045723388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43dd44603a76e844b30c6d766518575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5

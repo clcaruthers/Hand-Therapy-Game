@@ -10,6 +10,7 @@ public class MotionDetection : MonoBehaviour {
     enum FingerIndex { index = 1, middle, ring, pinky};
 
     Controller controller;
+    private Hand handReference;
 
     private int pinchCount = 0;
     private int[] fingerPinchCount;
@@ -21,6 +22,7 @@ public class MotionDetection : MonoBehaviour {
 
     #region Publics 
     public float minDisPinch = 19.0f;
+
 
     public bool[] fingersPinched = new bool[4];
     public bool handRaised = false;
@@ -70,6 +72,7 @@ public class MotionDetection : MonoBehaviour {
             for (int i = 0; i < frame.Hands.Count; i++)
             {
                 Hand hand = frame.Hands[i];
+                handReference = hand;
                 Behavior(hand);
 
                 testBool = true;
@@ -204,5 +207,10 @@ public class MotionDetection : MonoBehaviour {
 
         }
 
+    }
+
+    public Hand getHand()
+    {
+        return handReference;
     }
 }
