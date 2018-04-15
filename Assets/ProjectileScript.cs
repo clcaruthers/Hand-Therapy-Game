@@ -1,0 +1,44 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ProjectileScript : MonoBehaviour {
+
+    GameplayActions script = null;
+
+    private GameplayActions.ProjectileType myType;
+
+	// Use this for initialization
+	void Start () {
+        script = GameObject.Find("GameObject").GetComponent<GameplayActions>();
+        if (script != null)
+            Setup();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+        Destroy(this.gameObject, 5.0f);
+	}
+
+    
+
+    public void Setup()
+    {
+        myType = script.assignBall();
+        if (myType.element == -1)
+        {
+            //Destroy(this.gameObject
+            this.transform.localScale = this.transform.localScale * 0.1f;
+
+        }
+        if (myType.element == 0)
+            this.GetComponent<MeshRenderer>().material.color = Color.red;
+        if (myType.element == 1)
+            this.GetComponent<MeshRenderer>().material.color = Color.black;
+        if (myType.element == 2)
+            this.GetComponent<MeshRenderer>().material.color = Color.blue;
+        if (myType.element == 3)
+            this.GetComponent<MeshRenderer>().material.color = Color.yellow;
+    }
+}

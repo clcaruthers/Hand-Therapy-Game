@@ -4,7 +4,14 @@ using UnityEngine;
 using Leap.Unity;
 using Leap;
 
+
 public class GameplayActions : MonoBehaviour {
+
+    public class ProjectileType
+    {
+        public int element;
+        public int power;
+    }
 
     MotionDetection mDetection;
 
@@ -45,32 +52,6 @@ public class GameplayActions : MonoBehaviour {
                 pinchCounts[i]++;
                 frameCounts[i] = 0;
             }
-
-            if(pinchCounts[i] > necessaryPinches)
-            {
-                if (mDetection.handRaised)
-                {
-                    switch (i)
-                    {
-                        case 0:
-                            castWater(mDetection.clenchCount);
-                            break;
-                        case 1:
-                            castFire(mDetection.clenchCount);
-                            break;
-                        case 2:
-                            castEarth(mDetection.clenchCount);
-                            break;
-                        case 3:
-                            castAir(mDetection.clenchCount);
-                            break;
-                        default:
-                            break;
-                    }
-                    pinchCounts[i] = 0;
-                    mDetection.clenchCount = 0;
-                }
-            }
         }
 	}
 
@@ -85,23 +66,18 @@ public class GameplayActions : MonoBehaviour {
         }
     }
 
-    void castWater(int stength)
+    public ProjectileType assignBall()
     {
+        ProjectileType type = new ProjectileType();
+        type.element = -1;
+        for(int i = 0; i < 4; i++)
+        {
+            if (pinchCounts[i] > necessaryPinches)
+                type.element = i;
+        }
 
-    }
-
-    void castFire(int strength)
-    {
-
-    }
-
-    void castEarth(int strenght)
-    {
-
-    }
-
-    void castAir(int strength)
-    {
-
+        type.power = mDetection.clenchCount;
+        reset();
+        return type;
     }
 }
