@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        HealthBar = this.transform.Find("Canvas").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +42,9 @@ public class EnemyScript : MonoBehaviour {
             default:
                 break;
         }
+
+        HealthBar.transform.Find("HP").gameObject.GetComponent<Text>().text = health + " / " + maxHealth;
+
 	}
 
     public void TakeDamage(int _element, int _damage)
