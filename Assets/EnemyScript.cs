@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour {
 		
 	}
 
-    void TakeDamage(int _element, int _damage)
+    public void TakeDamage(int _element, int _damage)
     {
         switch ((Element)_element)
         {

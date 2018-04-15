@@ -196,7 +196,7 @@ public class MotionDetection : MonoBehaviour {
                 GameObject proj = GameObject.Instantiate(projectiles[0].body);
 
                 proj.transform.position = hand.PalmPosition.ToVector3() / 1000.0f;
-                proj.transform.position = new Vector3(proj.transform.position.x, proj.transform.position.y - 0.3f, proj.transform.position.z + 0.5f);
+                proj.transform.position = new Vector3(proj.transform.position.x, proj.transform.position.y - 0.3f, proj.transform.position.z + 0.3f);
 
                 proj.GetComponent<Rigidbody>().velocity = Vector3.forward;
 
