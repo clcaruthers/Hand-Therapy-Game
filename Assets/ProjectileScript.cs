@@ -6,7 +6,9 @@ public class ProjectileScript : MonoBehaviour {
 
     GameplayActions script = null;
 
-    private GameplayActions.ProjectileType myType;
+    public GameplayActions.ProjectileType myType;
+
+    AudioSource AS;
 
 	// Use this for initialization
 	void Start () {
