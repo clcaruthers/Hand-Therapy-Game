@@ -17,6 +17,8 @@ public class ProjectileScript : MonoBehaviour {
         script = GameObject.Find("GameObject").GetComponent<GameplayActions>();
         if (script != null)
             Setup();
+
+        Destroy(this.gameObject, 5.0f);
 	}
 	
 	// Update is called once per frame
@@ -27,18 +29,23 @@ public class ProjectileScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+
         EnemyScript eScript = collision.gameObject.GetComponent<EnemyScript>();
         if (eScript != null)
         {
             eScript.TakeDamage(element, myType.power);
         }
-        Destroy(this.gameObject);
+
+        if (collision.gameObject.tag == "Enemy")
+            Destroy(this.gameObject);
 
     }
 
     public void Setup()
     {
         myType = script.assignBall();
+
+        this.transform.localScale *= myType.power * 0.25f + 1.0f;
         element = myType.element;
         if (myType.element == -1)
         {

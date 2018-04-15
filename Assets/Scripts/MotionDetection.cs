@@ -217,7 +217,7 @@ public class MotionDetection : MonoBehaviour {
                 proj.transform.position = hand.PalmPosition.ToVector3() / 1000.0f;
                 proj.transform.position = new Vector3(proj.transform.position.x, proj.transform.position.y - 0.3f, proj.transform.position.z + 0.5f);
 
-                proj.GetComponent<Rigidbody>().velocity = Vector3.forward;
+                proj.GetComponent<Rigidbody>().velocity = Vector3.forward * (4.0f + (clenchCount * 0.25f));
 
             }
 

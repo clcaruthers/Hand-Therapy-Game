@@ -47,7 +47,7 @@ public class EnemyScript : MonoBehaviour {
                 break;
         }
 
-        HealthBar.transform.Find("HP").gameObject.GetComponent<Text>().text = health + " / " + maxHealth;
+        HealthBar.transform.Find("HP").gameObject.GetComponent<Text>().text = "HP: " + health + " / " + maxHealth;
 
 	}
 
