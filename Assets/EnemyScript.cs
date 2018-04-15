@@ -13,6 +13,10 @@ public class EnemyScript : MonoBehaviour {
 
     public GameObject HealthBar;
 
+    public GameObject[] effects = new GameObject[4];
+
+    GameplayActions.ProjectileType type;
+
 	// Use this for initialization
 	void Start () {
 
@@ -67,6 +71,24 @@ public class EnemyScript : MonoBehaviour {
                     health -= _damage * 10;
                 else
                     health -= _damage;
+                break;
+            default:
+                break;
+        }
+
+        switch ((Element)_element)
+        {
+            case Element.fire:
+                Instantiate(effects[0], this.gameObject.transform);
+                break;
+            case Element.water:
+                Instantiate(effects[1], this.gameObject.transform);
+                break;
+            case Element.earth:
+                Instantiate(effects[2], this.gameObject.transform);
+                break;
+            case Element.air:
+                Instantiate(effects[3], this.gameObject.transform);
                 break;
             default:
                 break;

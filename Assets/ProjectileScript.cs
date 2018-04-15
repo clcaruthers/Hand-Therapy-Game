@@ -6,7 +6,9 @@ public class ProjectileScript : MonoBehaviour {
 
     GameplayActions script = null;
 
-    private GameplayActions.ProjectileType myType;
+    public GameplayActions.ProjectileType myType;
+
+    AudioSource AS;
 
     private int element;
 
@@ -53,5 +55,6 @@ public class ProjectileScript : MonoBehaviour {
             this.GetComponent<MeshRenderer>().material.color = Color.blue;
         if (myType.element == 3)
             this.GetComponent<MeshRenderer>().material.color = Color.yellow;
+
     }
 }
