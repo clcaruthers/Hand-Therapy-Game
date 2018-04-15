@@ -38,16 +38,6 @@ public class EnemyScript : MonoBehaviour {
             default:
                 break;
         }
-
-        GameObject currHealth = GameObject.Find("CurrentHealth");
-
-        Image image = currHealth.GetComponent<Image>();
-
-        float testFill = health / (float)maxHealth;
-
-        image.fillAmount = testFill;
-
-
 	}
 
     public void TakeDamage(int _element, int _damage)
