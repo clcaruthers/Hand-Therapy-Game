@@ -89,16 +89,16 @@ public class EnemyScript : MonoBehaviour {
         switch ((Element)_element)
         {
             case Element.fire:
-                Instantiate(effects[0]);
+                Instantiate(effects[0], this.gameObject.transform);
                 break;
             case Element.water:
-                Instantiate(effects[1]);
+                Instantiate(effects[1], this.gameObject.transform);
                 break;
             case Element.earth:
-                Instantiate(effects[2]);
+                Instantiate(effects[2], this.gameObject.transform);
                 break;
             case Element.air:
-                Instantiate(effects[3]);
+                Instantiate(effects[3], this.gameObject.transform);
                 break;
             default:
                 break;
