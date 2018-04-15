@@ -8,8 +8,13 @@ public class GameplayActions : MonoBehaviour {
 
     MotionDetection mDetection;
 
+    public GameObject enemy;
+
+    EnemyScript eScript;
+
     int[] pinchCounts = new int[4];
     int[] frameCounts = new int[4];
+    bool[] pinchable = new bool[4];
 
     public int pinchLength = 10;
     public int necessaryPinches = 5;
@@ -17,6 +22,12 @@ public class GameplayActions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mDetection = GetComponent<MotionDetection>();
+        for(int i = 0; i < 4; ++i)
+        {
+            pinchable[i] = true;
+        }
+
+        eScript = enemy.GetComponent<EnemyScript>();
 	}
 	
 	// Update is called once per frame
@@ -25,9 +36,15 @@ public class GameplayActions : MonoBehaviour {
         {
             if (mDetection.fingersPinched[i])
                 frameCounts[i]++;
+            else
+                pinchable[i] = true;
 
-            if (frameCounts[i] > pinchLength)
+            if (frameCounts[i] > pinchLength && pinchable[i])
+            {
+                pinchable[i] = false;
                 pinchCounts[i]++;
+                frameCounts[i] = 0;
+            }
 
             if(pinchCounts[i] > necessaryPinches)
             {
@@ -50,11 +67,23 @@ public class GameplayActions : MonoBehaviour {
                         default:
                             break;
                     }
+                    pinchCounts[i] = 0;
                     mDetection.clenchCount = 0;
                 }
             }
         }
 	}
+
+    public void reset()
+    {
+        for(int i = 0; i < 4; ++i)
+        {
+            pinchCounts[i] = 0;
+            frameCounts[i] = 0;
+            mDetection.clenchCount = 0;
+            pinchable[i] = true;
+        }
+    }
 
     void castWater(int stength)
     {
