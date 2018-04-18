@@ -54,7 +54,7 @@ public class EnemyScript : MonoBehaviour {
             resetTimer -= Time.deltaTime;
             if (resetTimer <= 0)
             {
-                int h = ((int)(Random.value * 100) % 5 + 5) * 10;
+                int h = ((int)(Random.value * 100) % 3 + 2) * 10;
                 int t = (int)(Random.value * 100) % 4;
                 reset(t, h);
             }
