@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class UIManagerScript : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject CreditsCanvas;
+
+    [SerializeField]
+    private GameObject LicensesCanvas;
+
+    private void Awake()
+    {
+        HideCredits();
+        HideLicenses();
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Scene1");
@@ -12,7 +24,8 @@ public class UIManagerScript : MonoBehaviour
 
     public void ViewCredits()
     {
-        SceneManager.LoadScene("sceneCredits");
+        //SceneManager.LoadScene("sceneCredits");
+        CreditsCanvas.SetActive(true);
     }
 
     public void ViewMainMenu()
@@ -22,6 +35,16 @@ public class UIManagerScript : MonoBehaviour
 
     public void ViewLicenses()
     {
-        SceneManager.LoadScene("sceneLicenses");
+        LicensesCanvas.SetActive(true);
+    }
+
+    public void HideCredits()
+    {
+        CreditsCanvas.SetActive(false);
+    }
+
+    public void HideLicenses()
+    {
+        LicensesCanvas.SetActive(false);
     }
 }
