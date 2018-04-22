@@ -11,6 +11,9 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField]
     private GameObject LicensesCanvas;
 
+    [SerializeField]
+    private GameObject InstructionsCanvas;
+
     private void Awake()
     {
         HideCredits();
@@ -46,5 +49,15 @@ public class UIManagerScript : MonoBehaviour
     public void HideLicenses()
     {
         LicensesCanvas.SetActive(false);
+    }
+
+    public void ViewInstructions()
+    {
+        InstructionsCanvas.SetActive(true);
+    }
+
+    public void HideInstructions()
+    {
+        InstructionsCanvas.SetActive(false);
     }
 }
