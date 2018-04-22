@@ -3053,7 +3053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CreditsCanvas: {fileID: 899597202}
   LicensesCanvas: {fileID: 272413344}
-  InstructionsCanvas: {fileID: 0}
+  InstructionsCanvas: {fileID: 703541159}
 --- !u!4 &1830974181
 Transform:
   m_ObjectHideFlags: 0

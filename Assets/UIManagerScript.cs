@@ -18,6 +18,7 @@ public class UIManagerScript : MonoBehaviour
     {
         HideCredits();
         HideLicenses();
+        HideInstructions();
     }
 
     public void StartGame()
