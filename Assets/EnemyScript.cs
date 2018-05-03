@@ -30,7 +30,9 @@ public class EnemyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         Material MR = GetComponent<MeshRenderer>().materials[1];
+
         switch (element)
         {
             case Element.fire:

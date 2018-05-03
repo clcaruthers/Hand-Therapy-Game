@@ -8,13 +8,23 @@ public class ProjectileScript : MonoBehaviour {
 
     public GameplayActions.ProjectileType myType;
 
+    private GameObject AudioPlayer;
+    private AudioSource AudioPlayer_AS;
+
     AudioSource AS;
 
     private int element;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+
         AS = this.GetComponent<AudioSource>();
+        AudioPlayer = GameObject.FindGameObjectWithTag("AudioPlayer");
+        Debug.Assert(AudioPlayer != null);
+
+        AudioPlayer_AS = AudioPlayer.GetComponent<AudioSource>();
+        
         script = GameObject.Find("GameObject").GetComponent<GameplayActions>();
         if (script != null)
             Setup();
@@ -23,7 +33,10 @@ public class ProjectileScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        if (Input.GetKey(KeyCode.K))
+            AudioPlayer_AS.PlayOneShot(AudioPlayer_AS.clip);
 
         Destroy(this.gameObject, 5.0f);
 	}
