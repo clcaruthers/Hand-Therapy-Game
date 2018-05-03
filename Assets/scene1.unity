@@ -4104,6 +4104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486116023}
   - component: {fileID: 1486116022}
+  - component: {fileID: 1486116024}
   m_Layer: 0
   m_Name: AudioPlayer
   m_TagString: AudioPlayer
@@ -4121,7 +4122,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 88d50b4ce3de74f4d9cda0791b0a4563, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4204,6 +4205,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486116024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486116021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdedd213863a54448b6c818d67ac5f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CastClips:
+  - {fileID: 8300000, guid: ac90da34894d0a343ad1dd5fd6a6dfb4, type: 3}
+  - {fileID: 8300000, guid: 04ce9e1c36197344992968f9be33856d, type: 3}
+  - {fileID: 8300000, guid: 2796209685fd2714d8e4e2e146b0fda3, type: 3}
+  - {fileID: 8300000, guid: d7fc29c3f6b8e104fb832feb473bbe39, type: 3}
+  ChargeClips:
+  - {fileID: 8300000, guid: 67ee46b06f366f64bb261fb033747da9, type: 3}
+  - {fileID: 8300000, guid: 8a6689aa8798cbc428f477aa732e1369, type: 3}
+  - {fileID: 8300000, guid: 7c7213e6d95525c4a8309c4deafdafdc, type: 3}
+  - {fileID: 8300000, guid: 401b2587cf9aa3042a6cf1644578f3e9, type: 3}
+  ImpactClips:
+  - {fileID: 8300000, guid: 89ea047f77dda8146980419e0b2ac8ab, type: 3}
+  - {fileID: 8300000, guid: 55c00db235474454b8249e999058c76e, type: 3}
+  - {fileID: 8300000, guid: 14aefd6a486f8ce4db433e80a676a09d, type: 3}
+  - {fileID: 8300000, guid: 0f97fd7c73731fc40bf6a50bdccfd53d, type: 3}
+  DeathClips:
+  - {fileID: 8300000, guid: 7db3de7af51aec84b86064b6df5166ad, type: 3}
+  - {fileID: 8300000, guid: 88d50b4ce3de74f4d9cda0791b0a4563, type: 3}
+  MenuClips: []
 --- !u!198 &1489356089 stripped
 ParticleSystem:
   m_PrefabParentObject: {fileID: 198637134973051252, guid: a08f79b91347e154e854b2ab31d39212,

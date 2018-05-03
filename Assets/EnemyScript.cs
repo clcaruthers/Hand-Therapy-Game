@@ -22,11 +22,21 @@ public class EnemyScript : MonoBehaviour {
 
     float resetTimer = 0;
 
-	// Use this for initialization
-	void Start () {
+    private GameObject AudioPlayer;
+    private AudioSource AudioPlayer_AS;
+    private AudioManager audiomanager;
+
+    // Use this for initialization
+    void Start () {
         HealthBar = this.transform.Find("Canvas").gameObject;
         anim = animator.GetComponent<Animator>();
-	}
+
+        AudioPlayer = GameObject.FindGameObjectWithTag("AudioPlayer");
+        Debug.Assert(AudioPlayer != null);
+
+        AudioPlayer_AS = AudioPlayer.GetComponent<AudioSource>();
+        audiomanager = AudioPlayer.GetComponent<AudioManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -120,6 +130,8 @@ public class EnemyScript : MonoBehaviour {
         if (health <= 0)
         {
             anim.SetTrigger("Dead");
+            int rand = Random.Range(0, 1);
+            AudioPlayer_AS.PlayOneShot(audiomanager.DeathClips[rand]);
             resetTimer = 2;
         }
 

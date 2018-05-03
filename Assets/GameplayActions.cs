@@ -40,7 +40,13 @@ public class GameplayActions : MonoBehaviour {
     public int pinchLength = 10;
     public int necessaryPinches = 5;
 
-    ProjectileType type;
+    public ProjectileType type;
+
+    private GameObject AudioPlayer;
+    private AudioSource AudioPlayer_AS;
+    private AudioManager audiomanager;
+
+    
 
     void Awake()
     {
@@ -61,7 +67,13 @@ public class GameplayActions : MonoBehaviour {
 
         mDetection = GetComponent<MotionDetection>();
 
-        for(int i = 0; i < 4; ++i)
+        AudioPlayer = GameObject.FindGameObjectWithTag("AudioPlayer");
+        Debug.Assert(AudioPlayer != null);
+
+        AudioPlayer_AS = AudioPlayer.GetComponent<AudioSource>();
+        audiomanager = AudioPlayer.GetComponent<AudioManager>();
+
+        for (int i = 0; i < 4; ++i)
         {
             pinchable[i] = true;
         }
@@ -141,30 +153,31 @@ public class GameplayActions : MonoBehaviour {
 
         if (element == 0) //water
         {
+            AudioPlayer_AS.PlayOneShot(audiomanager.ChargeClips[element]);
             Color f = waterIcon.GetComponent<UnityEngine.UI.Image>().color;
             waterIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
         }
 
         else if (element == 1) //fire
         {
+            AudioPlayer_AS.PlayOneShot(audiomanager.ChargeClips[element]);
             Color f = fireIcon.GetComponent<UnityEngine.UI.Image>().color;
             fireIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
         }
 
         else if (element == 2) //earth
         {
+            AudioPlayer_AS.PlayOneShot(audiomanager.ChargeClips[element]);
             Color f = earthIcon.GetComponent<UnityEngine.UI.Image>().color;
             earthIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
         }
 
         else if (element == 3) //lightning
         {
+            AudioPlayer_AS.PlayOneShot(audiomanager.ChargeClips[element]);
             Color f = lightIcon.GetComponent<UnityEngine.UI.Image>().color;
             lightIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
         }
-
-        //maybe play a sound on selection
-
     }
 
     void ResetIcons()

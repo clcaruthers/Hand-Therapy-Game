@@ -20,7 +20,15 @@ public class MotionDetection : MonoBehaviour {
     private bool clenched;
     private bool shooting = false;
 
-    
+    private int element = -1;
+
+    GameplayActions actionReference;
+
+    private GameObject AudioPlayer;
+    private AudioSource AudioPlayer_AS;
+    private AudioManager audiomanager;
+
+
     #endregion
 
     #region Publics 
@@ -60,6 +68,14 @@ public class MotionDetection : MonoBehaviour {
             Debug.Log("Connected");
 
         AS = this.GetComponent<AudioSource>();
+
+        AudioPlayer = GameObject.FindGameObjectWithTag("AudioPlayer");
+        Debug.Assert(AudioPlayer != null);
+
+        AudioPlayer_AS = AudioPlayer.GetComponent<AudioSource>();
+        audiomanager = AudioPlayer.GetComponent<AudioManager>();
+
+        actionReference = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameplayActions>();
 	}
 	
 	// Update is called once per frame
@@ -70,6 +86,7 @@ public class MotionDetection : MonoBehaviour {
 
         Frame frame = controller.Frame();
 
+        element = actionReference.type.element;
         if (frame.Hands.Count != 0)
         {
             #region Debug Code/Testing
@@ -186,7 +203,10 @@ public class MotionDetection : MonoBehaviour {
 
             clenchParticle.GetComponent<ParticleSystem>().Play();
 
-            AS.Play();
+            if (this.element == -1)
+                AS.PlayOneShot(AS.clip);
+            else if (element >= 0 && element <= 3)
+                AS.PlayOneShot(audiomanager.ChargeClips[element]);
         }
         clenched = true;
 
@@ -219,6 +239,9 @@ public class MotionDetection : MonoBehaviour {
 
                 proj.GetComponent<Rigidbody>().velocity = Vector3.forward * (4.0f + (clenchCount * 0.25f));
                 proj.GetComponent<Rigidbody>().angularVelocity = new Vector3(10.0f, 10.0f, 10.0f);
+
+                if (element >= 0 && element <= 3)
+                AS.PlayOneShot(audiomanager.CastClips[element]);
             }
 
         }
