@@ -44,6 +44,7 @@ public class GameplayActions : MonoBehaviour {
 
     void Awake()
     {
+
         fireIcon = GameObject.Find("FireIcon");
         waterIcon = GameObject.Find("WaterIcon");
         earthIcon = GameObject.Find("EarthIcon");
@@ -57,7 +58,9 @@ public class GameplayActions : MonoBehaviour {
     void Start () {
 
         type = new ProjectileType();
+
         mDetection = GetComponent<MotionDetection>();
+
         for(int i = 0; i < 4; ++i)
         {
             pinchable[i] = true;
@@ -126,7 +129,6 @@ public class GameplayActions : MonoBehaviour {
 
     void ChangeElement(int element)
     {
-
         for (int i = 0; i < 4; i++)
         {
             pinchCounts[i] = 0;
@@ -137,16 +139,16 @@ public class GameplayActions : MonoBehaviour {
 
         ResetIcons();
 
-        if (element == 0) //fire
-        {
-            Color f = fireIcon.GetComponent<UnityEngine.UI.Image>().color;
-            fireIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
-        }
-        
-        else if (element == 1) //water
+        if (element == 0) //water
         {
             Color f = waterIcon.GetComponent<UnityEngine.UI.Image>().color;
             waterIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
+        }
+
+        else if (element == 1) //fire
+        {
+            Color f = fireIcon.GetComponent<UnityEngine.UI.Image>().color;
+            fireIcon.GetComponent<UnityEngine.UI.Image>().color = new Color(f.r, f.g, f.b, 1.0f);
         }
 
         else if (element == 2) //earth
