@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class UIManagerScript : MonoBehaviour
 {
     [SerializeField]
+    private GameObject MainMenuCanvas;
+
+    [SerializeField]
     private GameObject CreditsCanvas;
 
     [SerializeField]
@@ -17,40 +20,47 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField]
     private GameObject InstructionsContentsCanvas;
 
-    //Initialize Instructions section starting page
+    //Array for Instructions pages
+    [SerializeField]
+    private GameObject[] InstructionPage;
     private int CurrentInstructionPage = 0;
+    private int pageCount = 0;
 
     //Menu button sounds
     private AudioClip sfx_MenuBtnHover;
     private AudioClip sfx_MenuBtnClick;
 
+    //Initialize subscreen states
     private void Awake()
     {
+        MainMenuCanvas.SetActive(true);
         HideCredits();
         HideLicenses();
         HideInstructions();
-        InstructionsContentsCanvas.transform.position = new Vector3(-3840, 0, 0); //start Instructions at page 1
+        //Hide Instructions pages
+        for(int i = 0; i < InstructionPage.Length; i++)
+        {
+            InstructionPage[i].SetActive(false);
+        }
+        //InstructionsContentsCanvas.transform.position = new Vector3(-3840, 0, 0); //start Instructions at page 1
     }
 
+    //Go to gameplay scene
     public void StartGame()
     {
         SceneManager.LoadScene("Scene1");
     }
-
-    public void ViewCredits()
-    {
-        //SceneManager.LoadScene("sceneCredits");
-        CreditsCanvas.SetActive(true);
-    }
-
+        
+    //Explicitly reload Main Menu scene
     public void ViewMainMenu()
     {
         SceneManager.LoadScene("sceneMainMenu");
     }
 
-    public void ViewLicenses()
+    //Credits subscreen
+        public void ViewCredits()
     {
-        LicensesCanvas.SetActive(true);
+        CreditsCanvas.SetActive(true);
     }
 
     public void HideCredits()
@@ -58,59 +68,170 @@ public class UIManagerScript : MonoBehaviour
         CreditsCanvas.SetActive(false);
     }
 
+    //Licenses subscreen
+    public void ViewLicenses()
+    {
+        LicensesCanvas.SetActive(true);
+    }
+
     public void HideLicenses()
     {
         LicensesCanvas.SetActive(false);
     }
 
+    //Instructions subscreen
     public void ViewInstructions()
     {
         InstructionsCanvas.SetActive(true);
+        InstructionPage[0].SetActive(true);
+        CurrentInstructionPage = 0;
     }
 
     public void HideInstructions()
     {
         InstructionsCanvas.SetActive(false);
+        InstructionPage[0].SetActive(false);
+        InstructionPage[1].SetActive(false);
+        InstructionPage[2].SetActive(false);
+        InstructionPage[3].SetActive(false);
+        InstructionPage[4].SetActive(false);
+        InstructionPage[5].SetActive(false);
     }
 
+    //Scroll between instruction pages
     public void InstructionsNextPage()
     {
-        switch(CurrentInstructionPage)
+        CurrentInstructionPage++;
+        if (CurrentInstructionPage == InstructionPage.Length)
         {
+            CurrentInstructionPage = 0;
+            print(CurrentInstructionPage);
+        }
+
+        //Dirty brute-force page switching
+        switch (CurrentInstructionPage)
+        {
+            case 0:
+                InstructionPage[0].SetActive(true);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
+                break;
+
             case 1:
-                CurrentInstructionPage++;
-                print("Instructions Page 2");
-                InstructionsContentsCanvas.transform.position = new Vector3(-1920, 0, 0);
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(true);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
                 break;
 
             case 2:
-                CurrentInstructionPage++;
-                print("Instructions Page 3");
-                InstructionsContentsCanvas.transform.position = new Vector3(0, 0, 0);
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(true);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
                 break;
 
             case 3:
-                CurrentInstructionPage++;
-                print("Instructions Page 4");
-                InstructionsContentsCanvas.transform.position = new Vector3(1920, 0, 0);
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(true);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
                 break;
 
             case 4:
-                CurrentInstructionPage++;
-                print("Instructions Page 5");
-                InstructionsContentsCanvas.transform.position = new Vector3(3840, 0, 0);
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(true);
+                InstructionPage[5].SetActive(false);
                 break;
 
             case 5:
-                CurrentInstructionPage = 1;
-                print("Instructions Page 1");
-                InstructionsContentsCanvas.transform.position = new Vector3(-3840, 0, 0);
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(true);
                 break;
         }
     }
 
     public void InstructionsPrevPage()
     {
+        CurrentInstructionPage--;
+        if (CurrentInstructionPage < 0)
+        {
+            CurrentInstructionPage = (InstructionPage.Length - 1);
+            print(CurrentInstructionPage);
+        }
 
+        //Dirty brute-force page switching
+        switch (CurrentInstructionPage)
+        {
+            case 0:
+                InstructionPage[0].SetActive(true);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
+                break;
+
+            case 1:
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(true);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
+                break;
+
+            case 2:
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(true);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
+                break;
+
+            case 3:
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(true);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(false);
+                break;
+
+            case 4:
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(true);
+                InstructionPage[5].SetActive(false);
+                break;
+
+            case 5:
+                InstructionPage[0].SetActive(false);
+                InstructionPage[1].SetActive(false);
+                InstructionPage[2].SetActive(false);
+                InstructionPage[3].SetActive(false);
+                InstructionPage[4].SetActive(false);
+                InstructionPage[5].SetActive(true);
+                break;
+        }
     }
 }
