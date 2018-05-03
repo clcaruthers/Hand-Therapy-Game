@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Manager
+  - Enemy
+  - HandController
+  - Hand
+  - AudioPlayer
   layers:
   - Default
   - TransparentFX
