@@ -26,8 +26,11 @@ public class EnemyScript : MonoBehaviour {
     private AudioSource AudioPlayer_AS;
     private AudioManager audiomanager;
 
+    private EnemySwap eSwap;
     // Use this for initialization
     void Start () {
+        eSwap = GetComponentInChildren<EnemySwap>();
+        Debug.Assert(eSwap != null);
         HealthBar = this.transform.Find("Canvas").gameObject;
         anim = animator.GetComponent<Animator>();
 
@@ -41,21 +44,22 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Material MR = GetComponent<MeshRenderer>().materials[1];
+        MeshRenderer m = GetComponent<MeshRenderer>();
+        //Material MR = GetComponent<MeshRenderer>().materials[1];
 
         switch (element)
         {
             case Element.fire:
-                MR.color = Color.red;
+                m.material = eSwap.TypeSwap[1] ;
                 break;
             case Element.water:
-                MR.color = Color.blue;
+                m.material = eSwap.TypeSwap[0];
                 break;
             case Element.earth:
-                MR.color = Color.green;
+                m.material = eSwap.TypeSwap[2];
                 break;
             case Element.air:
-                MR.color = Color.yellow;
+                m.material = eSwap.TypeSwap[3];
                 break;
             default:
                 break;
