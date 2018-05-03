@@ -59,9 +59,9 @@ public class ProjectileScript : MonoBehaviour {
             //myType.element = 1;
 
         }
-        if (myType.element == 0)
-            this.GetComponent<MeshRenderer>().material.SetColor("_TintColor", Color.red);// color = Color.red;
         if (myType.element == 1)
+            this.GetComponent<MeshRenderer>().material.SetColor("_TintColor", Color.red);// color = Color.red;
+        if (myType.element == 0)
             this.GetComponent<MeshRenderer>().material.SetColor("_TintColor", Color.blue);
         if (myType.element == 2)
             this.GetComponent<MeshRenderer>().material.SetColor("_TintColor", Color.green);

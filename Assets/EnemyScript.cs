@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour {
 
-    public enum Element { fire, water, earth, air };
+    public enum Element { water, fire, earth, air };
 
     public int health = 50;
     public int maxHealth = 50;
