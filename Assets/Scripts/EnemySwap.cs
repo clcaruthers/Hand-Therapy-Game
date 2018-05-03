@@ -6,8 +6,15 @@ public class EnemySwap : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+        object[] array1 = newobject[4]
+        array1[0] = new object();
+        array1[1] = new object();
+        array1[2] = new object();
+        array1[3] = new object();
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
