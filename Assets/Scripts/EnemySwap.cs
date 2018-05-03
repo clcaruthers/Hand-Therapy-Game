@@ -13,7 +13,8 @@ public class EnemySwap : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        public material
+        public material;
+
         object[] array1 = newobject[4]
         array1[0] = new object ();
         array1[1] = new object ();
