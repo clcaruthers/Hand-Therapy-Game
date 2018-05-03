@@ -10,6 +10,7 @@ public class ProjectileScript : MonoBehaviour {
 
     private GameObject AudioPlayer;
     private AudioSource AudioPlayer_AS;
+    private AudioManager audiomanager;
 
     AudioSource AS;
 
@@ -24,6 +25,7 @@ public class ProjectileScript : MonoBehaviour {
         Debug.Assert(AudioPlayer != null);
 
         AudioPlayer_AS = AudioPlayer.GetComponent<AudioSource>();
+        audiomanager = AudioPlayer.GetComponent<AudioManager>();
         
         script = GameObject.Find("GameObject").GetComponent<GameplayActions>();
         if (script != null)
@@ -52,7 +54,7 @@ public class ProjectileScript : MonoBehaviour {
 
         if (collision.gameObject.tag == "Enemy")
         {
-            AS.PlayOneShot(AS.clip);
+            AS.PlayOneShot(audiomanager.ImpactClips[this.element]);
             this.GetComponent<MeshRenderer>().enabled = false;
             Destroy(this.gameObject, AS.clip.length);
         }
