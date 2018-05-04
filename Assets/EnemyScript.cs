@@ -86,7 +86,7 @@ public class EnemyScript : MonoBehaviour {
         switch ((Element)_element)
         {
             case Element.fire:
-                if (element == Element.air)
+                if (element == Element.earth)
                     health -= _damage * 10;
                 else
                     health -= _damage;
@@ -98,13 +98,13 @@ public class EnemyScript : MonoBehaviour {
                     health -= _damage;
                 break;
             case Element.earth:
-                if (element == Element.water)
+                if (element == Element.air)
                     health -= _damage * 10;
                 else
                     health -= _damage;
                 break;
             case Element.air:
-                if (element == Element.earth)
+                if (element == Element.water)   
                     health -= _damage * 10;
                 else
                     health -= _damage;
